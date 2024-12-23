@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://c5pcc21qwd18s"]
+
+[ext_resource type="PackedScene" uid="uid://fnylytv8ecxd" path="res://Scenes/GameLoop/player.tscn" id="1_i4cyl"]
+[ext_resource type="Texture2D" uid="uid://7mtcgrrj3jyx" path="res://icon.svg" id="1_wcedq"]
+[ext_resource type="PackedScene" uid="uid://dtra151fcex5h" path="res://Scenes/GameLoop/hud.tscn" id="3_bc8fh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eqpw5"]
+size = Vector2(1310, 331)
+
+[node name="GameLoop" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_i4cyl")]
+position = Vector2(96, 333)
+
+[node name="Chao" type="StaticBody2D" parent="."]
+position = Vector2(43, 466)
+
+[node name="Sprite2D" type="Sprite2D" parent="Chao"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(540, 97)
+scale = Vector2(10.1406, 2.51563)
+texture = ExtResource("1_wcedq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chao"]
+position = Vector2(535, 103.5)
+shape = SubResource("RectangleShape2D_eqpw5")
+
+[node name="HUD" parent="." instance=ExtResource("3_bc8fh")]

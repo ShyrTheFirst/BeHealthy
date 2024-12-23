@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=3 uid="uid://bdfl1y1t220kv"]
+
+[ext_resource type="Script" path="res://Scenes/GameMenus/Scripts/nome.gd" id="1_5kuns"]
+
+[node name="Nome" type="Label"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "NomeMedicamento"
+script = ExtResource("1_5kuns")
+
+[node name="Horario" type="Label" parent="."]
+layout_mode = 0
+offset_left = 371.0
+offset_right = 481.0
+offset_bottom = 23.0
+text = "HorarioTomar"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 491.0
+offset_right = 509.0
+offset_bottom = 31.0
+text = "X"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

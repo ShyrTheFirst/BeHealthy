@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://dtra151fcex5h"]
+
+[ext_resource type="PackedScene" uid="uid://dmr0fcamx7t56" path="res://addons/virtual_joystick/virtual_joystick_scene.tscn" id="1_7nbeu"]
+[ext_resource type="PackedScene" uid="uid://p8xr74nb0i5w" path="res://Scenes/GameLoop/botao.tscn" id="2_w0oqj"]
+
+[node name="HUD" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Virtual Joystick" parent="." instance=ExtResource("1_7nbeu")]
+layout_mode = 1
+offset_top = 351.0
+offset_bottom = 651.0
+
+[node name="Botao" parent="." instance=ExtResource("2_w0oqj")]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1051.0
+offset_top = 429.0
+offset_right = 1101.0
+offset_bottom = 479.0
+grow_horizontal = 0
+grow_vertical = 0

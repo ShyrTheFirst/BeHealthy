@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://p8xr74nb0i5w"]
+
+[ext_resource type="Script" path="res://Scenes/GameLoop/Scripts/Botao.gd" id="1_y5tes"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_sl25i"]
+width = 50
+height = 50
+
+[node name="Botao" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 50.0
+offset_bottom = 50.0
+script = ExtResource("1_y5tes")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(25, 25)
+texture = SubResource("NoiseTexture2D_sl25i")

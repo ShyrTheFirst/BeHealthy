@@ -1,0 +1,139 @@
+[gd_scene load_steps=2 format=3 uid="uid://buqbx7d2j28ig"]
+
+[ext_resource type="Script" path="res://Scenes/GameMenus/Scripts/game_config.gd" id="1_eu16r"]
+
+[node name="GameConfig" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_eu16r")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 149.0
+offset_top = 16.0
+offset_right = 931.0
+offset_bottom = 39.0
+text = "Adicionar aqui as informações pertinentes sobre medicamentos e rotinas medicas para iniciar o jogo."
+
+[node name="MedicamentosAdd" type="Panel" parent="Panel"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_top = 74.0
+offset_right = 576.0
+grow_vertical = 2
+
+[node name="AddMed" type="Button" parent="Panel/MedicamentosAdd"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -96.5
+offset_top = 28.0
+offset_right = 96.5
+offset_bottom = 59.0
+grow_horizontal = 2
+text = "Adicionar Medicamento"
+
+[node name="MedScroll" type="ScrollContainer" parent="Panel/MedicamentosAdd"]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 59.0
+offset_right = 558.0
+offset_bottom = 484.0
+
+[node name="Medicamentos" type="GridContainer" parent="Panel/MedicamentosAdd/MedScroll"]
+layout_mode = 2
+
+[node name="ConsultasAdd" type="Panel" parent="Panel"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 576.0
+offset_top = 74.0
+offset_right = 1152.0
+grow_vertical = 2
+
+[node name="AddCon" type="Button" parent="Panel/ConsultasAdd"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -81.0
+offset_top = 28.0
+offset_right = 81.0
+offset_bottom = 59.0
+grow_horizontal = 2
+text = "Adicionar Consultas"
+
+[node name="ConsultasScroll" type="ScrollContainer" parent="Panel/ConsultasAdd"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 59.0
+offset_right = 563.0
+offset_bottom = 484.0
+
+[node name="Consultas" type="GridContainer" parent="Panel/ConsultasAdd/ConsultasScroll"]
+layout_mode = 2
+
+[node name="Divisor" type="ColorRect" parent="Panel"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -250.0
+offset_right = 1152.0
+offset_bottom = -245.0
+grow_vertical = 2
+
+[node name="Divisor3" type="ColorRect" parent="Panel"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = 268.0
+offset_right = 1152.0
+offset_bottom = 273.0
+grow_vertical = 2
+
+[node name="Divisor2" type="ColorRect" parent="Panel"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 576.0
+offset_top = -245.0
+offset_right = 581.0
+offset_bottom = 268.0
+grow_vertical = 2
+
+[node name="Finalizar" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -44.5
+offset_top = -46.0
+offset_right = 44.5
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "FINALIZAR"
+
+[connection signal="pressed" from="Panel/MedicamentosAdd/AddMed" to="." method="_on_add_med_pressed"]
+[connection signal="pressed" from="Panel/ConsultasAdd/AddCon" to="." method="_on_add_con_pressed"]
+[connection signal="pressed" from="Panel/Finalizar" to="." method="_on_finalizar_pressed"]
